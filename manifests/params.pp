@@ -1,5 +1,6 @@
 
 class wget::params {
-  $package_ensure  = present
-  $package_name    = 'wget'
+  $package_manage = true
+  $package_ensure = present
+  $package_name   = 'wget'
 }

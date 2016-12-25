@@ -9,9 +9,10 @@ describe 'wget::install', :type => :class do
     :os => { 'name' => 'Ubuntu' }
   } }
 
-
-  it { is_expected.to contain_package('wget').with({
-        'alias' => 'wget',
-     })
-  }
+  context 'with default parameters', :compile do
+    it { is_expected.to contain_package('wget').with({
+            'alias' => 'wget',
+      })
+    }
+  end
 end
