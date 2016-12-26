@@ -1,6 +1,6 @@
 {
   "name": "rehan-wget",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Rehan Mahmood",
   "summary": "Install, manage and configure wget and retrieve files using it",
   "license": "Apache-2.0",
@@ -9,8 +9,9 @@
   "issues_url": "https://github.com/rehanone/puppet-wget/issues",
   "tags": [
     "wget",
-    "scm",
-    "version control"
+    "web get",
+    "download",
+    "archive"
   ],
   "operatingsystem_support": [
     {
