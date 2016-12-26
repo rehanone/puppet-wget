@@ -3,7 +3,7 @@ define wget::retrieve (
   Stdlib::Absolutepath  $destination,
   String                $source             = $title,
   Optional[String]      $source_hash        = undef,
-  String                $timeout            = '0',
+  Integer[0]            $timeout            = 0,
   Boolean               $verbose            = false,
   Boolean               $redownload         = false,
   Boolean               $nocheckcertificate = false,
@@ -16,11 +16,12 @@ define wget::retrieve (
   Optional[Stdlib::Absolutepath]
                         $cache_dir          = undef,
   Optional[String]      $cache_file         = undef,
-  $flags              = undef,
+  Optional[Array[String]]
+                        $flags              = undef,
   Boolean               $backup             = true,
   Optional[String]      $group              = undef,
   Optional[String]      $mode               = undef,
-  $unless             = undef,
+  Optional[String]      $unless             = undef,
   Optional[Stdlib::Httpurl]
                         $http_proxy         = undef,
   Optional[Stdlib::Httpsurl]
