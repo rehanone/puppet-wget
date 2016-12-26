@@ -87,7 +87,7 @@ Usage:
 
 
 ```puppet
-    wget::fetch { "download Google's index":
+    wget::retrieve { "download Google's index":
       source      => 'http://www.google.com/index.html',
       destination => '/tmp/',
       timeout     => 0,
@@ -97,7 +97,7 @@ Usage:
 or alternatively: 
 
 ```puppet
-    wget::fetch { 'http://www.google.com/index.html':
+    wget::retrieve { 'http://www.google.com/index.html':
       destination => '/tmp/',
       timeout     => 0,
       verbose     => false,
@@ -106,7 +106,7 @@ or alternatively:
 
 If `$destination` ends in either a forward or backward slash, it will treat the destination as a directory and name the file with the basename of the `$source`.
 ```puppet
-  wget::fetch { 'http://mywebsite.com/apples':
+  wget::retrieve { 'http://mywebsite.com/apples':
     destination => '/downloads/',
   }
 ```
@@ -119,15 +119,15 @@ Download from an array of URLs into one directory
     'http://mywebsite.com/bananas',
   ]
 
-  wget::fetch { $manyfiles:
+  wget::retrieve { $manyfiles:
     destination => '/downloads/',
   }
 ```
 
-This fetches a document which requires authentication:
+This retrieves a document which requires authentication:
 
 ```puppet
-    wget::fetch { 'Fetch secret PDF':
+    wget::retrieve { 'Retrieve secret PDF':
       source      => 'https://confidential.example.com/secret.pdf',
       destination => '/tmp/',
       user        => 'user',
@@ -142,7 +142,7 @@ repeatedly downloading it. This uses the timestamping (-N) and prefix (-P)
 wget options to only re-download if the source file has been updated.
 
 ```puppet
-    wget::fetch { 'https://tool.com/downloads/tool-1.0.tgz':
+    wget::retrieve { 'https://tool.com/downloads/tool-1.0.tgz':
       destination => '/tmp/',
       cache_dir   => '/var/cache/wget',
     }
@@ -153,7 +153,7 @@ basename but this assumption can be broken if wget follows some redirects. In
 this case you must inform the correct filename in the cache like this:
 
 ```puppet
-    wget::fetch { 'https://tool.com/downloads/tool-latest.tgz':
+    wget::retrieve { 'https://tool.com/downloads/tool-latest.tgz':
       destination => '/tmp/tool-1.0.tgz',
       cache_dir   => '/var/cache/wget',
       cache_file  => 'tool-1.1.tgz',
@@ -167,7 +167,7 @@ If content exists, but does not match it is removed before downloading.
 
 If you want to use your own unless condition, you can do it. This example uses wget to download the latest version of Wordpress to your destination folder only if the folder is empty (test used returns 1 if directory is empty or 0 if not).
 ```puppet
-    wget::fetch { 'wordpress':
+    wget::retrieve { 'wordpress':
         source      => 'https://wordpress.org/latest.tar.gz',
         destination => "/var/www/html/latest_wordpress.tar.gz",
         timeout     => 0,
