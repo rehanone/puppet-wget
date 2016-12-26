@@ -17,7 +17,7 @@ The `rehan-wget` module that can install wget and retrieve files using it.
 
 ## Module Description
 This module is a clone of [maestrodev-wget](https://forge.puppet.com/maestrodev/wget) without any legacy support for 
-puppet versions older than 4.0. It manages installation of wget and supports retrieval of files are directories for the 
+puppet versions older than 4.0. It manages installation of wget and supports retrieval of files and directories from the 
 Internet.
 
 #### Implemented Features:
@@ -29,7 +29,7 @@ In order to install `rehan-wget`, run the following command:
 ```bash
 $ puppet module install rehan-wget
 ```
-The module does expect all the data to be provided through 'Hiera'. See [Usage](#usage) for examples on how to configure it.
+The module can be used with `hiera` to provide all configuration options. See [Usage](#usage) for examples on how to configure it.
 
 #### Requirements
 This module is designed to be as clean and compliant with latest puppet code guidelines. It works with:
