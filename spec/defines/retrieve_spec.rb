@@ -9,7 +9,7 @@ describe 'wget::retrieve' do
       end
 
       let :pre_condition do
-          'class { "wget": }'
+          'class { "wget": package_ensure => present, package_name => "wget", package_manage => true, }'
       end
 
       let(:title) { 'test' }
