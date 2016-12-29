@@ -1,6 +1,7 @@
 # rehan-wget
 
 [![Build Status](https://travis-ci.org/rehanone/puppet-wget.svg?branch=master)](https://travis-ci.org/rehanone/puppet-wget)
+[![Coverage Status](https://coveralls.io/repos/github/rehanone/puppet-wget/badge.svg?branch=master)](https://coveralls.io/github/rehanone/puppet-wget?branch=master)
 
 #### Table of Contents
 1. [Overview](#overview)
