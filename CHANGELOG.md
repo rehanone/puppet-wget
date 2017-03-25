@@ -2,7 +2,7 @@
 
 Bugfixes:
 
-  - Minor correction of date in change.
+  - Minor correction of date in changelog.
 
 ## 1.1.1 (March 25, 2017)
 
