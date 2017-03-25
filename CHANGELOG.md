@@ -1,4 +1,10 @@
-## 1.1.1 (March 25, 2016)
+## 1.1.2 (March 25, 2017)
+
+Bugfixes:
+
+  - Minor correction of date in change.
+
+## 1.1.1 (March 25, 2017)
 
 Bugfixes:
 
