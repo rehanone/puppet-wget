@@ -1,3 +1,9 @@
+## 1.1.1 (March 25, 2016)
+
+Bugfixes:
+
+  - Restore `params.pp` file to avoid test failures in down stream modules.
+
 ## 1.1.0 (December 27, 2016)
 
 Improvements:
