@@ -1,3 +1,9 @@
+## 1.1.3 (March 26, 2017)
+
+Bugfixes:
+
+  - Fix broken default values from params.pp.
+
 ## 1.1.2 (March 25, 2017)
 
 Bugfixes:
