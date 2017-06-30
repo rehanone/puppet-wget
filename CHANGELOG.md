@@ -1,3 +1,10 @@
+## 1.1.5 (June 30, 2017)
+
+Bugfixes:
+
+  - Fixed the type in retrievals hiera name.
+  - Fixed the missing wget::package warning in retrieve.
+
 ## 1.1.4 (June 11, 2017)
 
 Improvements:
