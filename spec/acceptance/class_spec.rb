@@ -25,6 +25,18 @@ describe 'wget class:', :unless => UNSUPPORTED_PLATFORMS.include?(fact('osfamily
     end
   end
 
+  context 'retrievals => hash:' do
+    it 'runs successfully' do
+      pp = "class { 'wget': package_ensure => present, retrievals => {'http://www.apple.com/index.html' => {destination => '/tmp/'} } }"
+
+      apply_manifest(pp, :catch_failures => true) do |r|
+        expect(r.stderr).not_to match(/error/i)
+      end
+      shell('test -e /tmp/index.html')
+      shell('rm -f /tmp/index.html')
+    end
+  end
+
   context 'package_ensure => absent:' do
     it 'runs successfully' do
       pp = "class { 'wget': package_ensure => absent }"

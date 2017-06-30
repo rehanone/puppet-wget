@@ -4,7 +4,7 @@ class wget (
   String  $package_ensure = $wget::params::package_ensure,
   String  $package_name   = $wget::params::package_name,
   Hash[String, Hash[String, String]]
-          $retrievals     = lookup('wget::retrieve', Hash, 'hash', {}),
+          $retrievals     = lookup('wget::retrievals', Hash, 'hash', {}),
 ) inherits wget::params {
 
   anchor { "${module_name}::begin": }

@@ -147,8 +147,9 @@ define wget::retrieve (
   }
 
 
-
-
+  if ! defined('wget') {
+    contain wget
+  }
   exec { "wget-${name}":
     command     => $command,
     timeout     => $timeout,
