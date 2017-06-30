@@ -24,6 +24,7 @@ describe 'wget::retrieve' do
       apply_manifest(manifest, :catch_failures => true)
       apply_manifest(manifest, :catch_changes => true)
       shell('test -e /tmp/index.html')
+      shell('rm -f /tmp/index.html')
     end
   end
 
