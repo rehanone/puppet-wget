@@ -1,3 +1,10 @@
+## 1.1.6 (November 24, 2017)
+
+Improvements:
+
+  - Implemented Puppet 4 module data pattern using `hiera` for module defaults and removed `params.pp`.
+  - Added support for Puppet 5.
+
 ## 1.1.5 (June 30, 2017)
 
 Bugfixes:
