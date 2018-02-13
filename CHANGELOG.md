@@ -1,3 +1,10 @@
+## 1.1.7 (February 12, 2018)
+
+Improvements:
+
+  - Updated module data to `hiera 5`.
+  - Added support for newer OS releases.
+
 ## 1.1.6 (November 24, 2017)
 
 Improvements:
