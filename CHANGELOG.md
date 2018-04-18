@@ -1,3 +1,9 @@
+## 1.2.0 (April 18, 2018)
+
+Improvements:
+
+  - Updated module to `pdk` compliant.
+
 ## 1.1.7 (February 12, 2018)
 
 Improvements:
