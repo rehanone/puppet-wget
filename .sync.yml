@@ -13,6 +13,9 @@ appveyor.yml:
 .gitlab-ci.yml:
   delete: true
 
+.rubocop_todo.yml:
+  delete: true
+
 .travis.yml:
   bundler_args: ""
 
@@ -79,6 +82,9 @@ NOTICE:
 CONTRIBUTING.md:
 
 spec/spec.opts:
+  delete: true
+
+spec/spec_helper_local.rb:
   delete: true
 
 .project:
