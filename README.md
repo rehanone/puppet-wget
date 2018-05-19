@@ -68,7 +68,6 @@ All of this data can be provided through `Hiera`.
 
 **YAML**
 ```yaml
----
 wget::package_manage: true
 wget::package_ensure: present
 wget::package_name: 'wget'
@@ -183,5 +182,5 @@ If you want to use your own unless condition, you can do it. This example uses w
 
 ## Development
 
-You can submit pull requests and create issues through the official page of this module: https://github.com/rehanone/puppet-wget. 
+You can submit pull requests and create issues through the official page of this module on [GitHub](https://github.com/rehanone/puppet-wget).
 Please do report any bug and suggest new features/improvements.
