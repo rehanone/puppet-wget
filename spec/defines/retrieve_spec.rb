@@ -157,7 +157,7 @@ describe 'wget::retrieve' do
       context 'with multiple headers', :compile do
         let(:params) do
           super().merge(
-            headers: %w[header1 header2],
+            headers: ['header1', 'header2'],
           )
         end
 
