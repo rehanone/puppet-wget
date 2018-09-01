@@ -178,7 +178,7 @@ If you want to use your own unless condition, you can do it. This example uses w
 
 * [stdlib][1]
 
-[1]:https://github.com/puppetlabs/puppetlabs-stdlib
+[1]:https://forge.puppet.com/puppetlabs/stdlib
 
 ## Development
 
