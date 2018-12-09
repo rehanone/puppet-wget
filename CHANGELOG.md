@@ -1,3 +1,10 @@
+## 1.3.1 (December 9, 2018)
+
+Improvements:
+
+- Updated `pdk` templates.
+- Updated os support matrix.
+
 ## 1.3.0 (October 14, 2018)
 
 Improvements:
