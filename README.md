@@ -34,7 +34,7 @@ The module can be used with `hiera` to provide all configuration options. See [U
 #### Requirements
 This module is designed to be as clean and compliant with latest puppet code guidelines. It works with:
 
-  - `puppet >=4.10.0`
+  - `puppet >=5.5.10`
 
 ## Usage
 
