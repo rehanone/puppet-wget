@@ -1,3 +1,11 @@
+## 1.4.0 (August 25, 2019)
+
+Improvements:
+
+- Added support for Debian 10.
+- Updated os support matrix.
+- Updated `pdk` templates.
+
 ## 1.3.4 (June 10, 2019)
 
 Improvements:
