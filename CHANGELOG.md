@@ -1,3 +1,10 @@
+## 1.5.1 (April 29, 2020)
+
+Improvements:
+
+- Added support for Ubuntu 20.04.
+- Updated `pdk` templates.
+
 ## 1.5.0 (February 13, 2020)
 
 Improvements:
