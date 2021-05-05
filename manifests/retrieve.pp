@@ -2,41 +2,36 @@
 
 define wget::retrieve (
   Stdlib::Absolutepath  $destination,
-  String                $source             = $title,
-  Optional[String]      $source_hash        = undef,
-  Integer[0]            $timeout            = 0,
-  Boolean               $verbose            = false,
-  Boolean               $redownload         = false,
-  Boolean               $nocheckcertificate = false,
-  Boolean               $no_cookies         = false,
-  Optional[String]      $execuser           = undef,
-  Optional[String]      $user               = undef,
-  Optional[String]      $password           = undef,
-  Optional[Array[String]]
-                        $headers            = undef,
-  Optional[Stdlib::Absolutepath]
-                        $cache_dir          = undef,
-  Optional[String]      $cache_file         = undef,
-  Optional[Array[String]]
-                        $flags              = undef,
-  Boolean               $backup             = true,
-  Optional[String]      $group              = undef,
-  Optional[String]      $mode               = undef,
-  Optional[String]      $unless             = undef,
-  Optional[Stdlib::Httpurl]
-                        $http_proxy         = undef,
-  Optional[Stdlib::Httpsurl]
-                        $https_proxy        = undef,
+  String                $source               = $title,
+  Optional[String]      $source_hash          = undef,
+  Integer[0]            $timeout              = 0,
+  Boolean               $verbose              = false,
+  Boolean               $redownload           = false,
+  Boolean               $nocheckcertificate   = false,
+  Boolean               $no_cookies           = false,
+  Optional[String]      $execuser             = undef,
+  Optional[String]      $user                 = undef,
+  Optional[String]      $password             = undef,
+  Optional[Array[String]]        $headers     = undef,
+  Optional[Stdlib::Absolutepath] $cache_dir   = undef,
+  Optional[String]               $cache_file  = undef,
+  Optional[Array[String]]        $flags       = undef,
+  Boolean               $backup               = true,
+  Optional[String]      $group                = undef,
+  Optional[String]      $mode                 = undef,
+  Optional[String]      $unless               = undef,
+  Optional[Stdlib::Httpurl]      $http_proxy  = undef,
+  Optional[Stdlib::Httpsurl]     $https_proxy = undef,
 ) {
 
   # Does $destination end in a slash? If so, treat as a directory
-  case $destination   {
+  case $destination {
     # This is a nasty looking regex but it's simply checking to see if the $destination
     # ends in either forward slash "\" (Linux) or backwards slash "/" (Windows)
-    /^.*\/$/, /^.*\$/:  {
-      $source_split    = split($source, '/')  # split the URL into arrays, using "/" as a delimiter
+    /^.*\/$/, /^.*\$/: {
+      $source_split = split($source, '/')  # split the URL into arrays, using "/" as a delimiter
       $source_filename = $source_split[-1]    # take the very last value in the array. this is the filename
-      $_destination    = "${destination}/${source_filename}"
+      $_destination = "${destination}/${source_filename}"
     }
     default: {
       $_destination = $destination
@@ -57,7 +52,7 @@ define wget::retrieve (
   }
 
   # not using stdlib.concat to avoid extra dependency
-  $environment = split(inline_template('<%= (@http_proxy_env+@https_proxy_env+@password_env).join(\',\') %>'),',')
+  $environment = split(inline_template('<%= (@http_proxy_env+@https_proxy_env+@password_env).join(\',\') %>'), ',')
 
   $verbose_option = $verbose ? {
     true  => '--verbose',
@@ -65,15 +60,15 @@ define wget::retrieve (
   }
 
   # Windows exec unless testing requires different syntax
-  if ($::facts[operatingsystem] == 'windows') {
-    $exec_path = $::path
+  if ($::facts[os][name] == 'windows') {
+    $exec_path = $::facts[path]
     $unless_test = "cmd.exe /c \"dir ${_destination}\""
   } else {
     $exec_path = '/usr/bin:/usr/sbin:/bin:/usr/local/bin:/opt/local/bin:/usr/sfw/bin'
     if $unless != undef {
       $unless_test = $unless
     }
-    elsif $redownload == true or $cache_dir != undef  {
+    elsif $redownload == true or $cache_dir != undef {
       $unless_test = 'test'
     } else {
       $unless_test = "test -s '${_destination}'"
@@ -129,7 +124,7 @@ define wget::retrieve (
   }
 
   $flags_joined = $flags ? {
-    undef => '',
+    undef   => '',
     default => inline_template(' <%= @flags.join(" ") %>')
   }
 
@@ -138,7 +133,7 @@ define wget::retrieve (
     default => undef,
   }
 
-  case $source_hash{
+  case $source_hash {
     '', undef: {
       $command = "wget ${verbose_option}${nocheckcert_option}${no_cookies_option}${header_option}${user_option}${output_option}${flags_joined} \"${source}\""
     }
@@ -148,7 +143,7 @@ define wget::retrieve (
   }
 
 
-  if ! defined('wget') {
+  if !defined('wget') {
     contain wget
   }
   exec { "wget-${name}":

@@ -4,8 +4,7 @@ class wget (
   Boolean $package_manage,
   String  $package_ensure,
   String  $package_name,
-  Hash[String, Hash[String, String]]
-          $retrievals     = lookup('wget::retrievals', Hash, 'hash', {}),
+  Hash[String, Hash[String, String]] $retrievals = lookup('wget::retrievals', Hash, 'hash', {}),
 ) {
 
   anchor { "${module_name}::begin": }
