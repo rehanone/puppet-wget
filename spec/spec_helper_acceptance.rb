@@ -4,7 +4,7 @@ require 'beaker/puppet_install_helper'
 require 'beaker/module_install_helper'
 
 run_puppet_install_helper
-install_ca_certs unless ENV['PUPPET_INSTALL_TYPE'] =~ %r{pe}i
+install_ca_certs unless ENV['PUPPET_INSTALL_TYPE'].match?(%r{pe}i)
 install_module_on(hosts)
 install_module_dependencies_on(hosts)
 
@@ -26,7 +26,7 @@ end
 RSpec.shared_context 'with faked facts' do
   let(:facts_d) do
     puppet_version = return_puppet_version
-    if fact('osfamily') =~ %r{windows}i
+    if fact('osfamily').match?(%r{windows}i)
       if fact('kernelmajversion').to_f < 6.0
         'C:/Documents and Settings/All Users/Application Data/PuppetLabs/facter/facts.d'
       else
@@ -41,7 +41,7 @@ RSpec.shared_context 'with faked facts' do
 
   before :each do
     # No need to create on windows, PE creates by default
-    if fact('osfamily') !~ %r{windows}i
+    if fact('osfamily').match?(%r{windows}i)
       shell("mkdir -p '#{facts_d}'")
     end
   end
