@@ -1,6 +1,6 @@
 {
   "name": "rehan-wget",
-  "version": "1.5.1",
+  "version": "1.6.0",
   "author": "Rehan Mahmood",
   "summary": "Install, manage and configure wget and retrieve files using it",
   "license": "Apache-2.0",
