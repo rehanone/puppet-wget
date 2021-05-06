@@ -1,3 +1,9 @@
+## 1.6.1 (May 6, 2021)
+
+**Improvements:**
+
+- Added `puppet 7` as a supported version.
+
 ## 1.6.0 (May 6, 2021)
 
 **Features:**
