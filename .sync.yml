@@ -31,7 +31,7 @@ appveyor.yml:
     - set: ubuntu1604-64
       collection: puppet7
     - set: ubuntu1404-64
-      collection: puppet7
+      collection: puppet6
     - set: debian10-64
       collection: puppet7
     - set: debian9-64
