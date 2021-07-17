@@ -1,6 +1,6 @@
 # rehan-wget
 
-[![Puppet Forge](http://img.shields.io/puppetforge/v/rehan/wget.svg)](https://forge.puppetlabs.com/rehan/wget) [![Build Status](https://travis-ci.org/rehanone/puppet-wget.svg?branch=master)](https://travis-ci.org/rehanone/puppet-wget)
+[![Puppet Forge](http://img.shields.io/puppetforge/v/rehan/wget.svg)](https://forge.puppetlabs.com/rehan/wget) [![Build Status](https://travis-ci.com/rehanone/puppet-wget.svg?branch=master)](https://travis-ci.com/rehanone/puppet-wget)
 
 #### Table of Contents
 1. [Overview](#overview)
