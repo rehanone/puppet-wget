@@ -32,9 +32,7 @@ $ puppet module install rehan-wget
 The module can be used with `hiera` to provide all configuration options. See [Usage](#usage) for examples on how to configure it.
 
 #### Requirements
-This module is designed to be as clean and compliant with latest puppet code guidelines. It works with:
-
-  - `puppet >=5.5.10`
+This module is designed to be as clean and compliant with latest puppet code guidelines.
 
 ## Usage
 
