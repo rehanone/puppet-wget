@@ -23,7 +23,6 @@ define wget::retrieve (
   Optional[Stdlib::Httpurl]      $http_proxy  = undef,
   Optional[Stdlib::Httpsurl]     $https_proxy = undef,
 ) {
-
   # Does $destination end in a slash? If so, treat as a directory
   case $destination {
     # This is a nasty looking regex but it's simply checking to see if the $destination
@@ -40,15 +39,15 @@ define wget::retrieve (
 
   $http_proxy_env = $http_proxy ? {
     undef   => [],
-    default => [ "HTTP_PROXY=${http_proxy}", "http_proxy=${http_proxy}" ],
+    default => ["HTTP_PROXY=${http_proxy}", "http_proxy=${http_proxy}"],
   }
   $https_proxy_env = $https_proxy ? {
     undef   => [],
-    default => [ "HTTPS_PROXY=${https_proxy}", "https_proxy=${https_proxy}" ],
+    default => ["HTTPS_PROXY=${https_proxy}", "https_proxy=${https_proxy}"],
   }
   $password_env = $user ? {
     undef   => [],
-    default => [ "WGETRC=${_destination}.wgetrc" ],
+    default => ["WGETRC=${_destination}.wgetrc"],
   }
 
   # not using stdlib.concat to avoid extra dependency
@@ -141,7 +140,6 @@ define wget::retrieve (
       $command = "wget ${verbose_option}${nocheckcert_option}${no_cookies_option}${header_option}${user_option}${output_option}${flags_joined} \"${source}\" && echo '${source_hash}  ${_destination}' | md5sum -c --quiet"
     }
   }
-
 
   if !defined('wget') {
     contain wget
