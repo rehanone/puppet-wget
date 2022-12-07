@@ -46,16 +46,11 @@
       "operatingsystem": "AlmaLinux"
     },
     {
-      "operatingsystem": "SLES",
-      "operatingsystemrelease": [
-        "12",
-        "15"
-      ]
+      "operatingsystem": "SLES"
     },
     {
       "operatingsystem": "Debian",
       "operatingsystemrelease": [
-        "8",
         "9",
         "10",
         "11"
@@ -64,19 +59,14 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "14.04",
         "16.04",
         "18.04",
-        "20.04"
+        "20.04",
+        "22.04"
       ]
     },
     {
-      "operatingsystem": "FreeBSD",
-      "operatingsystemrelease": [
-        "11",
-        "12",
-        "13"
-      ]
+      "operatingsystem": "FreeBSD"
     },
     {
       "operatingsystem": "DragonFly"
@@ -97,7 +87,7 @@
     "download",
     "archive"
   ],
-  "pdk-version": "2.3.0",
-  "template-url": "pdk-default#2.3.0",
-  "template-ref": "tags/2.3.0-0-g8aaceff"
+  "pdk-version": "2.5.0",
+  "template-url": "pdk-default#2.5.0",
+  "template-ref": "tags/2.5.0-0-g369d483"
 }
