@@ -1,3 +1,12 @@
+## 3.0.0 (June 3, 2023)
+
+**Improvements:**
+
+- Updated minimum `puppet` version to `7.0.0`.
+- Updated dependency versions.
+- Migrate integration tests from `puppet 6` to `puppet 8`.
+- Add integration tests for `almalinux-9`.
+
 ## 2.0.1 (December 7, 2022)
 
 **Improvements:**
