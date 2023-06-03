@@ -36,10 +36,6 @@ appveyor.yml:
       collection: puppet7
     - set: ubuntu1804-64
       collection: puppet6
-    - set: ubuntu1604-64
-      collection: puppet7
-    - set: ubuntu1604-64
-      collection: puppet6
     - set: debian11-64
       collection: puppet7
     - set: debian11-64
@@ -47,10 +43,6 @@ appveyor.yml:
     - set: debian10-64
       collection: puppet7
     - set: debian10-64
-      collection: puppet6
-    - set: debian9-64
-      collection: puppet7
-    - set: debian9-64
       collection: puppet6
     #    - set: almalinux9-64
     #      collection: puppet7
